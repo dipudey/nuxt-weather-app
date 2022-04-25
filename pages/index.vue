@@ -88,7 +88,7 @@ export default {
         temperature() {
             this.$axios
                 .$get(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=3f805c0e19574496fc160805dc5b835f`
+                    `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${process.env.API_KEY}`
                 )
                 .then((res) => (this.weather = res))
                 .catch((res) => alert("not found"));
